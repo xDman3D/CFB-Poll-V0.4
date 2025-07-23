@@ -201,7 +201,7 @@ def run_current_season(api_key, season, max_week, system, base_elos):
 # Main
 # -------------------------
 if __name__ == "__main__":
-    API_KEY = "NzqjVKK0tMab5dMe8wXBGhql5o+jefFhsyjTA37Ad6QNrwaNOyMnqZYTy4VaF5go"  # Replace with your CFBD API key
+    API_KEY = "YOUR_API_KEY"  # Replace with your CFBD API key
     BASE_ELOS = {
         'SEC': 1550,
         'Big Ten': 1530,
