@@ -3,9 +3,9 @@ import math
 import csv
 import json
 
-# -------------------------
+
 # Glicko-2 with Margin-of-Victory
-# -------------------------
+
 class Glicko2Player:
     def __init__(self, rating=1500, rd=350, sigma=0.06):
         self.rating = rating
@@ -85,9 +85,8 @@ class Glicko2System:
         return {team: p.rating for team, p in self.players.items()}
 
 
-# -------------------------
 # CFBD Data Fetch
-# -------------------------
+
 def fetch_games(api_key, season, week):
     url = f"https://api.collegefootballdata.com/games?year={season}&week={week}"
     headers = {"Authorization": f"Bearer {api_key}"}
@@ -106,9 +105,9 @@ def fetch_conferences(api_key):
     return {team['school']: team['conference'] for team in teams}
 
 
-# -------------------------
+
 # Export Functions
-# -------------------------
+
 def export_weekly_rankings_csv(weekly_rankings, filepath="weekly_rankings.csv"):
     with open(filepath, "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
@@ -129,9 +128,9 @@ def export_weekly_rankings_json(weekly_rankings, filepath="weekly_rankings.json"
     print(f"Weekly rankings exported to {filepath}")
 
 
-# -------------------------
-# Historical Warm-up
-# -------------------------
+
+# Historical Data
+
 def run_historical(api_key, start_year, end_year, base_elos):
     """Run Glicko-2 updates from start_year to end_year to warm up ratings."""
     conf_map = fetch_conferences(api_key)
@@ -163,9 +162,9 @@ def run_historical(api_key, start_year, end_year, base_elos):
     return system
 
 
-# -------------------------
+
 # Current Season Rankings
-# -------------------------
+
 def run_current_season(api_key, season, max_week, system, base_elos):
     conf_map = fetch_conferences(api_key)
     weekly_rankings = {}
@@ -197,9 +196,8 @@ def run_current_season(api_key, season, max_week, system, base_elos):
     return weekly_rankings
 
 
-# -------------------------
 # Main
-# -------------------------
+
 if __name__ == "__main__":
     API_KEY = "YOUR_API_KEY"  # Replace with your CFBD API key
     BASE_ELOS = {
