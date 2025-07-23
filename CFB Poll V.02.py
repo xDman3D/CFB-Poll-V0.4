@@ -216,7 +216,7 @@ if __name__ == "__main__":
         'FBS Independents': 1450
     }
 
-    # 1. Warm up ratings using historical data (2015–2024)
+    # 1. Setting ratings using historical data (2015–2024)
     glicko_system = run_historical(API_KEY, 2015, 2024, BASE_ELOS)
 
     # 2. Run rankings for 2025
