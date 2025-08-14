@@ -19,5 +19,7 @@ Taking into account offseason recruiting rankings and transfer portal moves
 
 
 
+
+
 ----------------------------------------------------
-If for whatever reason you find this. I am an Architect and not a developer or software engineer. Please do not expect consistant updates or for the code to be that good. 
+If for whatever reason you find this. I am an Architect and not a developer or software engineer. Please do not expect consistant updates or for the code to be good. 
